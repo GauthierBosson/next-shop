@@ -15,7 +15,7 @@ const ShoppingCard: React.FC = () => {
       animate={isOpen ? 'visible' : 'hidden'}
       variants={variants}
       transition={{ type: 'spring', duration: 1 }}
-      className="w-1/4 min-h-screen bg-black absolute top-0 right-0"
+      className="w-full min-h-screen bg-black fixed top-0 right-0 z-50 lg:w-1/2 xl:w-1/4"
     />
   )
 }
