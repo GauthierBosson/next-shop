@@ -8,7 +8,7 @@ export type ProductDetailsState = {
   toggleProductDetails: () => void
 }
 
-export type ModalState = {
+export type LoginState = {
   isOpen: boolean
   toggleModal: () => void
 }

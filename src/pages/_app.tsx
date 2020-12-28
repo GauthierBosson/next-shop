@@ -1,10 +1,9 @@
 import { AppProps } from 'next/app'
 
 import ShoppingCard from '../components/elements/ShoppingCard'
-
-import '../../styles/globals.css'
-
 import Navbar from '../components/elements/Navbar'
+import { Login } from '../components/elements/Modals'
+import '../../styles/globals.css'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -13,6 +12,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <ShoppingCard />
       <Component {...pageProps} />
       <div id="modal-root" />
+      <Login />
     </>
   )
 }

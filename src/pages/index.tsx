@@ -1,10 +1,9 @@
 import ProductsGrid from '../components/layouts/Home/ProductsGrid'
-import Modal from '../components/elements/Modal'
-import { useShoppingCard, useProductDetails, useModal } from '../libs/stores'
+import { useShoppingCard, useProductDetails, useLogin } from '../libs/stores'
 
 const Home: React.FC = () => {
   const toggleShoppingCard = useShoppingCard((state) => state.toggleShoppingCard)
-  const toggleModal = useModal((state) => state.toggleModal)
+  const toggleModal = useLogin((state) => state.toggleModal)
   const toggleProductDetails = useProductDetails(
     (state) => state.toggleProductDetails
   )
@@ -16,7 +15,6 @@ const Home: React.FC = () => {
         <button onClick={() => toggleProductDetails()}>Product</button>
         <button onClick={() => toggleModal()}>Modal</button>
       </div>
-      <Modal title="testtitle">test test test</Modal>
     </>
   )
 }

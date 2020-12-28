@@ -1,5 +1,5 @@
 import create from 'zustand'
-import { ShoppingCardState, ProductDetailsState, ModalState } from './types'
+import { ShoppingCardState, ProductDetailsState, LoginState } from './types'
 
 export const useShoppingCard = create<ShoppingCardState>((set) => ({
   isOpen: false,
@@ -11,7 +11,7 @@ export const useProductDetails = create<ProductDetailsState>((set) => ({
   toggleProductDetails: () => set((state) => ({ isOpen: !state.isOpen })),
 }))
 
-export const useModal = create<ModalState>((set) => ({
+export const useLogin = create<LoginState>((set) => ({
   isOpen: false,
   toggleModal: () => {
     set((state) => {
