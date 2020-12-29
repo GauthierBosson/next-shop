@@ -10,5 +10,10 @@ export type ProductDetailsState = {
 
 export type LoginState = {
   isOpen: boolean
-  toggleModal: () => void
+  toggleLogin: () => void
+}
+
+export type SignupState = {
+  isOpen: boolean
+  toggleSignup: () => void
 }

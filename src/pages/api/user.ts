@@ -7,8 +7,16 @@ const handler = nc<NextApiRequest, NextApiResponse>()
   .get('/user/:id', (req, res) => {
     res.send('/user/:id')
   })
-  .post((req, res) => {
-    res.send('post user')
+  .post(async (req, res) => {
+    const { name, email, password } = req.body
+    const newUser = await prisma.user.create({
+      data: {
+        name,
+        email,
+        password,
+      },
+    })
+    res.json(newUser)
   })
   .put((req, res) => {
     res.send('put user')
