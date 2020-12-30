@@ -3,6 +3,7 @@ import { Product } from '@prisma/client'
 
 import prisma from '../libs/prisma'
 import ProductsGrid from '../components/layouts/Home/ProductsGrid'
+import { ProductDetails } from '../components/elements/Modals'
 import {
   useShoppingCard,
   useProductDetails,
@@ -21,11 +22,13 @@ const Home: React.FC<{ products: Product[] }> = ({ products }) => {
     <>
       <div className="overflow-x-hidden relative min-h-screen">
         <ProductsGrid products={products} />
+        <ProductDetails />
         <button onClick={() => toggleShoppingCard()}>Card</button>
         <button onClick={() => toggleProductDetails()}>Product</button>
         <button onClick={() => toggleLogin()}>Login</button>
         <button onClick={() => toggleSignup()}>Signup</button>
       </div>
+      <ProductDetails />
     </>
   )
 }
