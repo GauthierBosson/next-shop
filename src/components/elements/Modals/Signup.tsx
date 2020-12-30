@@ -20,37 +20,49 @@ const Signup: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
             className="relative bg-white p-20 w-1/2"
           >
-            <Formik
-              initialValues={{
-                name: '',
-                email: '',
-                password: '',
-                confirmPassword: '',
-              }}
-              validationSchema={SignupSchema}
-              onSubmit={(values, { setSubmitting }) => {
-                const { name, email, password } = values
-                const data = { name, email, password }
-                createUser.mutate(data)
-                setSubmitting(false)
-              }}
-            >
-              {({ isSubmitting }) => (
-                <Form>
-                  <Field type="text" name="name" />
-                  <ErrorMessage name="name" component="div" />
-                  <Field type="email" name="email" />
-                  <ErrorMessage name="email" component="div" />
-                  <Field type="password" name="password" />
-                  <ErrorMessage name="password" component="div" />
-                  <Field type="password" name="confirmPassword" />
-                  <ErrorMessage name="confirmPassword" component="div" />
-                  <button type="submit" disabled={isSubmitting}>
-                    Submit
-                  </button>
-                </Form>
-              )}
-            </Formik>
+            {createUser.isLoading ? (
+              <p>Signing up...</p>
+            ) : (
+              <>
+                {createUser.isError ? (
+                  <p>an error occured: {createUser.error.message}</p>
+                ) : null}
+
+                {createUser.isSuccess ? <p>User created !</p> : null}
+
+                <Formik
+                  initialValues={{
+                    name: '',
+                    email: '',
+                    password: '',
+                    confirmPassword: '',
+                  }}
+                  validationSchema={SignupSchema}
+                  onSubmit={(values, { setSubmitting }) => {
+                    const { name, email, password } = values
+                    const data = { name, email, password }
+                    createUser.mutate(data)
+                    setSubmitting(false)
+                  }}
+                >
+                  {({ isSubmitting }) => (
+                    <Form>
+                      <Field type="text" name="name" />
+                      <ErrorMessage name="name" component="div" />
+                      <Field type="email" name="email" />
+                      <ErrorMessage name="email" component="div" />
+                      <Field type="password" name="password" />
+                      <ErrorMessage name="password" component="div" />
+                      <Field type="password" name="confirmPassword" />
+                      <ErrorMessage name="confirmPassword" component="div" />
+                      <button type="submit" disabled={isSubmitting}>
+                        Submit
+                      </button>
+                    </Form>
+                  )}
+                </Formik>
+              </>
+            )}
           </div>
         </div>
       </Portal>
