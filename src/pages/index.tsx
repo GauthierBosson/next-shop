@@ -17,6 +17,7 @@ const Home: React.FC<{ products: Product[]; slugsArray: [string] }> = ({
   const toggleSignup = useSignup((state) => state.toggleSignup)
   return (
     <>
+      <h1>Heading</h1>
       <div className="overflow-x-hidden relative min-h-screen">
         <ProductsGrid products={products} />
         <button onClick={() => toggleShoppingCard()}>Card</button>
