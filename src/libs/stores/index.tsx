@@ -1,19 +1,9 @@
 import create from 'zustand'
-import {
-  ShoppingCardState,
-  ProductDetailsState,
-  LoginState,
-  SignupState,
-} from './types'
+import { ShoppingCardState, LoginState, SignupState } from './types'
 
 export const useShoppingCard = create<ShoppingCardState>((set) => ({
   isOpen: false,
   toggleShoppingCard: () => set((state) => ({ isOpen: !state.isOpen })),
-}))
-
-export const useProductDetails = create<ProductDetailsState>((set) => ({
-  isOpen: false,
-  toggleProductDetails: () => set((state) => ({ isOpen: !state.isOpen })),
 }))
 
 export const useLogin = create<LoginState>((set) => ({

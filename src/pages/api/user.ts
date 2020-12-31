@@ -4,7 +4,7 @@ import nc from 'next-connect'
 import prisma from '../../libs/prisma'
 
 const handler = nc<NextApiRequest, NextApiResponse>()
-  .get('/user/:id', (req, res) => {
+  .get((req, res) => {
     res.send('/user/:id')
   })
   .post(async (req, res) => {

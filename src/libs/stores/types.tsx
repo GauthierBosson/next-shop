@@ -3,11 +3,6 @@ export type ShoppingCardState = {
   toggleShoppingCard: () => void
 }
 
-export type ProductDetailsState = {
-  isOpen: boolean
-  toggleProductDetails: () => void
-}
-
 export type LoginState = {
   isOpen: boolean
   toggleLogin: () => void
