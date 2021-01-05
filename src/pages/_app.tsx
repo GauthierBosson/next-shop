@@ -23,7 +23,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <div id="modal-root" />
       <Login />
       <Signup />
-      <ReactQueryDevtools initialIsOpen />
+      <ReactQueryDevtools />
     </QueryClientProvider>
   )
 }
