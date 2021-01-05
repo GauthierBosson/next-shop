@@ -15,7 +15,9 @@ const HeroSearch: React.FC<{ router: NextRouter }> = ({ router }) => {
       {({ isSubmitting }) => (
         <Form>
           <Field type="text" name="game" />
-          <button disabled={isSubmitting}>submit</button>
+          <button type="submit" disabled={isSubmitting}>
+            submit
+          </button>
         </Form>
       )}
     </Formik>
