@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { Portal } from '../../../libs/hooks'
 import { useLogin } from '../../../libs/stores'
 import { LoginSchema } from '../../../libs/validation'
+import { Input } from '../../primitives/Form'
 
 const Login: React.FC = () => {
   const isOpen = useLogin((state) => state.isOpen)
@@ -30,9 +31,20 @@ const Login: React.FC = () => {
             >
               {({ isSubmitting }) => (
                 <Form>
-                  <Field type="email" name="email" />
+                  <label htmlFor="email">
+                    Email
+                    <Field id="email" type="email" name="email" as={Input} />
+                  </label>
                   <ErrorMessage name="email" component="div" />
-                  <Field type="password" name="password" />
+                  <label htmlFor="password">
+                    Password
+                    <Field
+                      id="password"
+                      type="password"
+                      name="password"
+                      as={Input}
+                    />
+                  </label>
                   <ErrorMessage name="password" component="div" />
                   <button type="submit" disabled={isSubmitting}>
                     Submit

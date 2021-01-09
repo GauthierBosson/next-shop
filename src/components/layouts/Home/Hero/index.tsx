@@ -1,7 +1,7 @@
 import { NextRouter } from 'next/router'
-import { H1 } from '../../primitives/Headings'
+import { H1 } from '../../../primitives/Headings'
 
-import { HeroSearch } from '../Forms'
+import { HeroSearch } from '../../../elements/Forms'
 
 const Hero: React.FC<{ router: NextRouter }> = ({ router }) => {
   return (

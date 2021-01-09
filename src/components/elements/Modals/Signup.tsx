@@ -4,6 +4,7 @@ import { Portal } from '../../../libs/hooks'
 import { useSignup } from '../../../libs/stores'
 import { SignupSchema } from '../../../libs/validation'
 import { useCreateUser } from '../../../libs/hooks/user'
+import { Input } from '../../primitives/Form'
 
 const Signup: React.FC = () => {
   const createUser = useCreateUser()
@@ -47,13 +48,35 @@ const Signup: React.FC = () => {
                 >
                   {({ isSubmitting }) => (
                     <Form>
-                      <Field type="text" name="name" />
+                      <label htmlFor="name">
+                        Name
+                        <Field id="name" type="text" name="name" as={Input} />
+                      </label>
                       <ErrorMessage name="name" component="div" />
-                      <Field type="email" name="email" />
+                      <label htmlFor="email">
+                        Email
+                        <Field id="email" type="email" name="email" as={Input} />
+                      </label>
                       <ErrorMessage name="email" component="div" />
-                      <Field type="password" name="password" />
+                      <label htmlFor="password">
+                        Password
+                        <Field
+                          id="password"
+                          type="password"
+                          name="password"
+                          as={Input}
+                        />
+                      </label>
                       <ErrorMessage name="password" component="div" />
-                      <Field type="password" name="confirmPassword" />
+                      <label htmlFor="confirmPassword">
+                        Confirm Password
+                        <Field
+                          id="confirmPassword"
+                          type="password"
+                          name="confirmPassword"
+                          as={Input}
+                        />
+                      </label>
                       <ErrorMessage name="confirmPassword" component="div" />
                       <button type="submit" disabled={isSubmitting}>
                         Submit
